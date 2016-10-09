@@ -1,7 +1,13 @@
 package array;
 
 import java.util.Arrays;
-
+/**
+ * 移动零元素
+ *1 判断非零元素，设置
+ *2 填充非零元素
+ * @author lfq
+ *
+ */
 public class MoveZeroes {
 	public static void main(String[] args) {
 		int[] A = {0,1,0,3,12};
