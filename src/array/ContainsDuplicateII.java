@@ -3,6 +3,13 @@ package array;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 找出重复位置之间的最小差的范围，不必具体计算差值再比较
+ * 利用set集合的add,remove方法解决
+ * 对遍历过的元素进行简化处理是核心，最终至多只需要完全遍历一次
+ * @author lfq
+ *
+ */
 public class ContainsDuplicateII {
 
 	public static void main(String[] args) {
