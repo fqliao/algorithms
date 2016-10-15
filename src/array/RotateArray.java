@@ -7,12 +7,12 @@ import java.util.List;
 
 /**
  * @decription:数组旋转
- * 四种方式实现：
- * 1 最直接的两段复制：利用System.arraycopy方法
+ * 3种方式实现：
+ * 1 最直接的两段复制：利用System.arraycopy方法,clone方法
  * 2 利用列表集合的旋转方法：Collections.rotate(list,k)
  * 3 经典三步倒序（与旋转不一样，旋转不到倒序，但倒序可用组合到旋转）法：
  * 三次倒序，倒序实现：头尾两两交换
- * 4 利用clone,不像1,2要讲新的数组单独再复制回nums
+
  * ***注意：优先处理特殊情况，好处主要有两点
  * 1）一些特殊情况通用算法不适应，要单独处理，否则存在bug
  * 2）特殊情况的特殊处理非常快速，不用进入通用算法，优化性能
@@ -28,17 +28,14 @@ public class RotateArray {
 		int[] nums1 = {1,2,3,4,5,6,7};
 		int[] nums2 = {1,2,3,4,5,6,7};
 		int[] nums3 = {1,2,3,4,5,6,7};
-		int[] nums4 = {1,2,3,4,5,6,7};
 		int k = 3;
 		//测试三种方式
 		rotate1(nums1, k);
 		rotate2(nums2, k);
 		rotate3(nums3, k);
-		rotate4(nums4, k);
 		System.out.println(Arrays.toString(nums1));
 		System.out.println(Arrays.toString(nums2));
 		System.out.println(Arrays.toString(nums3));
-		System.out.println(Arrays.toString(nums4));
 	}
 	
 	//直接两段复制，这种方式实现不了完全倒序
@@ -48,14 +45,11 @@ public class RotateArray {
         if(len < 2 || k ==1) return;
         k = k % len;
         int d = len - k;
-        int[] newNums = new int[len];
+        int[] numBak = nums.clone();
         //先复制后面移动的元素
-        System.arraycopy(nums,d,newNums,0,k);
-        System.arraycopy(nums,0,newNums,k,d);
-        for(int i = 0; i < len; i++)
-        {
-            nums[i] = newNums[i];
-        }
+        System.arraycopy(numBak,d,nums,0,k);
+        System.arraycopy(numBak,0,nums,k,d);
+
     }
 	
     //利用集合旋转方法，但是要先从数组转集合，旋转后从集合再转回数组，两次转回开销大
@@ -101,23 +95,6 @@ public class RotateArray {
             r--;
         }
     }
-    
-    public static void rotate4(int[] nums, int k){
-        if(nums==null || nums.length<2 || k == 1) return;
-        int len = nums.length;
-        //克隆，只用使用数组元素，快速复制，而且不会影响原数组的值
-        int[] temp = nums.clone();
-        int mid = len-k%len;
-        int index = 0;
-        //先复制后面移动的元素
-        for(int i=mid; i<len; i++, index++){
-            nums[index] = temp[i];
-        }
-        //再复制前面的元素
-        for(int i=0; i<mid; i++, index++){
-            nums[index] = temp[i];
-        }
-    }
-	
+    	
 
 }
