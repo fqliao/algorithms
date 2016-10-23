@@ -52,9 +52,9 @@ public class SubSpace {
 			}
 		}
 		int size = len + 2*count;//填充之后的大小
-		int p1 = len-1,p2 = size-1;
-		String[] replaceStr = {"0","2","%"};
-		while(p1 != p2)
+		int p1 = len-1,p2 = size-1;//两个指针
+		String[] replaceStr = {"0","2","%"};//要替换成的字符
+		while(p1 != p2)//当p1 == p2，则替换完毕
 		{
 			while(!str[p1].equals(" "))
 			{
