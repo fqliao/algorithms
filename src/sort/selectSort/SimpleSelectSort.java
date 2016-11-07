@@ -1,10 +1,12 @@
-package sort;
+package sort.selectSort;
 
 import java.util.Arrays;
 
+import sort.SortUtil;
+
 /**
  * @decription:选择排序--->简单选择排序算法(选最值比较交换) 
- * 1 时间复杂度：O(n^2) O(n^2)(数组之前是否有序这个规律不起作用，选择直接按最值来选)
+ * 1 时间复杂度：O(n^2) O(n^2)(数组之前是否有序这个规律不起作用，选择直接按最值来选，只注重最值规律，忽略了顺序规律)
  * 2 稳定性：不稳定(挑选最值的过程中可能变化相同元素之前的位置 比如 1 3 3 2 )
  * 3 辅助空间：O(1) (交换时使用了一个临时变量，若是数值交换，则可以也不用临时变量)
  * 4 比较：虽然复杂度与冒泡排序算法一样，但是性能还是由于冒泡排序，因为只是数量级一样，但是具体次数简单选择法要少
@@ -22,9 +24,10 @@ public class SimpleSelectSort {
 
 	}
 	
+	//高级点炒股
 	public static void simpleSelectSort(int[] arr) throws Exception
 	{
-		if(arr == null || arr.length == 0 || arr.length == 1)
+		if(arr == null || arr.length < 2)
 			return;
 		int len = arr.length;
 		for (int i = 0; i < len; i++) 

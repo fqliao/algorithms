@@ -1,6 +1,8 @@
-package sort;
+package sort.swapSort;
 
 import java.util.Arrays;
+
+import sort.SortUtil;
 
 /**
  * @decription:交换排序--->冒泡排序算法(相邻元素比较交换)
@@ -21,9 +23,10 @@ public class BubbleSort {
 
 	}
 	
+	//新手炒股
 	public static void bubbleSort(int[] arr) throws Exception
 	{
-		if(arr == null || arr.length == 0 || arr.length == 1)
+		if(arr == null || arr.length < 2)
 			return;
 		int len = arr.length;
 		boolean flag = false;//true表示排序完，false表示未排序完
