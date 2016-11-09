@@ -3,6 +3,8 @@ package sort.swapSort;
 import java.util.Arrays;
 
 
+
+import sort.SortUtil;
 import sort.insertSort.DirectInsertSort;
 
 /**
@@ -36,12 +38,13 @@ public class QuickSort {
 		else//大数组交给快速排序
 		{
 			int pivot;
-			while(low < high)//利用尾递归优化
+			if(low < high)//利用尾递归优化
+//			while(low < high)//利用尾递归优化
 			{
-				pivot = Partition(nums,low,high);
+				pivot = partion(nums,low,high);
 				sort(nums,low,pivot-1);
-//				sort(nums,pivot+1,high);
-				low = pivot + 1;
+				sort(nums,pivot+1,high);
+//				low = pivot + 1;
 			}
 		}
 	}
@@ -53,7 +56,7 @@ public class QuickSort {
 	 * @return
 	 * @throws Exception
 	 */
-	private static int Partition(int[] nums, int low, int high) throws Exception 
+	private static int partion(int[] nums, int low, int high) throws Exception 
 	{
 		int pivotKey;
 		
@@ -67,19 +70,19 @@ public class QuickSort {
 //			SortUtil.swap(nums, low, mid);
 		
 		pivotKey = nums[low];
-		int currentValue = pivotKey;//将枢轴关键字备份到currentValue
+//		int currentValue = pivotKey;//将枢轴关键字备份到currentValue
 		while(low < high)
 		{
 			while(low < high && nums[high] >= pivotKey)
 				high--;
-//			SortUtil.swap(nums,low,high);//比枢轴记录小的记录交换到低端
-			nums[low] = nums[high];//采用替换，而不是交换,这样减少了多次交换数据操作，提高性能
+			SortUtil.swap(nums,low,high);//比枢轴记录小的记录交换到低端
+//			nums[low] = nums[high];//采用替换，而不是交换,这样减少了多次交换数据操作，提高性能
 			while(low < high && nums[low] <= pivotKey)
 				low++;
-//			SortUtil.swap(nums, low, high);//比枢轴记录大的记录交换到低端
-			nums[high] = nums[low];
+			SortUtil.swap(nums, low, high);//比枢轴记录大的记录交换到低端
+//			nums[high] = nums[low];
 		}
-		nums[low] = currentValue;
+//		nums[low] = currentValue;
 		return low;
 	}
 
