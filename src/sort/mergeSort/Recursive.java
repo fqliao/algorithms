@@ -17,7 +17,6 @@ public class Recursive {
 
 	public static void main(String[] args) {
         int[] nums = { 2, 7, 8, 3, 1, 6, 9, 0, 5, 4 };  
-        
         sort(nums, 0, nums.length-1);  
         System.out.println(Arrays.toString(nums)); 
 
