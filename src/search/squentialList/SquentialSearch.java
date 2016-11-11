@@ -1,9 +1,9 @@
-package search.squential;
+package search.squentialList;
 
 import java.util.Arrays;
 
 /**
- * @decription:顺序查找
+ * @decription:顺序表查找--->顺序查找
  * 时间复杂度：O(n) O(1)
  * 优化：
  * 1 利用哨兵法，减少循环变量的依次比较
@@ -17,7 +17,7 @@ import java.util.Arrays;
 public class SquentialSearch {
 
 	public static void main(String[] args) {
-		int[] nums = {1,3,2,4};
+		int[] nums = {1,3,2,4,6};
 		System.out.println(search(nums, 0)+" "+Arrays.toString(nums));
 		System.out.println(search(nums, 1)+" "+Arrays.toString(nums));
 		System.out.println(search(nums, 3)+" "+Arrays.toString(nums));
