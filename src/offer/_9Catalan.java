@@ -9,7 +9,7 @@ package offer;
  * @author: lfq
  * 
  */
-public class Catalan {
+public class _9Catalan {
 
 	public static int catalan(int n) {
 		if (n == 0 || n == 1) {
