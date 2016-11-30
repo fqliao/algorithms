@@ -10,30 +10,30 @@ package array;
 public class MM {
 
 	public static void main(String[] args) {
-		int x = 2;
-		int e = 1000;
-		int m = 89;
-		System.out.println(mm(x, e, m));
+		int base = 2;
+		int exponent = 7;
+		int mode = 3;
+		System.out.println(mm(base, exponent, mode));
 
 	}
 	
-	public static int mm(int x,int e,int m)
+	public static int mm(int base,int exponent,int mode)
 	{
-		int y = 1;
-		while(e != 0)
+		int result = 1;
+		while(exponent != 0)
 		{
-			if(e % 2 !=0)
+			if(exponent % 2 !=0)
 			{
-				e = e-1;
-				y = x*y % m;
+				exponent = exponent-1;
+				result = (base * result) % mode;
 			}
 			else
 			{
-				e = e/2;
-				x = x*x % m;
+				exponent = exponent/2;
+				base = (base * base) % mode;
 			}
 		}
-		return y;
+		return result;
 	}
 
 }
