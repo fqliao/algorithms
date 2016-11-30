@@ -1,4 +1,4 @@
-package array;
+package offer;
 
 /**
  * @decription:快速模乘算法
@@ -7,7 +7,7 @@ package array;
  * @author: lfq
  * 
  */
-public class MM {
+public class _11ModularExponent {
 
 	public static void main(String[] args) {
 		int base = 2;
@@ -22,14 +22,14 @@ public class MM {
 		int result = 1;
 		while(exponent != 0)
 		{
-			if(exponent % 2 !=0)
+			if((exponent & 0x1) == 1)//不能被2整除
 			{
 				exponent = exponent-1;
 				result = (base * result) % mode;
 			}
 			else
 			{
-				exponent = exponent/2;
+				exponent = exponent >> 1;
 				base = (base * base) % mode;
 			}
 		}
