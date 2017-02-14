@@ -11,12 +11,12 @@ public class _9Fabonacci {
 
 	public static void main(String[] args) throws Exception {
 
-		System.out.println(add1(1, 50));
-		System.out.println(add2(1, 50));
+//		System.out.println(add1(1, 50));
+//		System.out.println(add2(1, 50));
 //		System.out.println(fibonacci1(100));
-		System.out.println(fibonacci2(100));
-		System.out.println(jump1(99));
-		System.out.println(jump2(5));
+		System.out.println(fibonacci2(50));
+//		System.out.println(jump1(99));
+//		System.out.println(jump2(5));
 	}
 	
 	//循环
