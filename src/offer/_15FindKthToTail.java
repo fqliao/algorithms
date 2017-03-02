@@ -3,7 +3,7 @@ package offer;
 
 /**
  * @decription:链表倒数第k个节点 双指针威力巨大！
- * @version:1.0
+ * @version:2.0
  * @date: 2017年3月2日下午7:44:33
  * @author: lfq
  * 

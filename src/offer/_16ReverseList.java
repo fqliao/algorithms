@@ -1,5 +1,12 @@
 package offer;
 
+/**
+ * @decription:反转链表
+ * @version:1.0
+ * @date: 2017年3月2日下午8:56:43
+ * @author: lfq
+ * 
+ */
 public class _16ReverseList {
 
 	public static void main(String[] args) {
